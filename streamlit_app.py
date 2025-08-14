@@ -4,8 +4,8 @@ import pandas as pd
 from datetime import datetime, timedelta, timezone
 
 # ---------- Supabase REST config ----------
-SUPABASE_URL = "https://qkonktvwcbfkehznugum.supabase.co"  # <- your project
-SUPABASE_KEY = st.secrets['SUPABASE_KEY']      # service role or anon w/ RLS read policy
+SUPABASE_URL = "https://ojaksxisaxkpiepbvlie.supabase.co"  # <- your project
+SUPABASE_KEY = st.secrets['SUPABASE_KEY']  
 TABLE = "quote_history"
 REST_ENDPOINT = f"{SUPABASE_URL}/rest/v1/{TABLE}"
 HEADERS = {
@@ -138,6 +138,7 @@ with col3:
 compute = st.button("Compute")
 
 if compute:
+
     df = fetch_quotes(chain=chain, days=days)
 
     if df.empty:
